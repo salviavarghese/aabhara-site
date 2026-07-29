@@ -40,7 +40,10 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook \
 pdftoppm -jpeg -jpegopt quality=85 -scale-to 1200 -f 1 -l 1 catalogue.pdf cover
 mv cover-01.jpg cover.jpg
 
-# 3. Ship it
+# 3. Set the title browsers show in the tab (needs exiftool: brew install exiftool)
+exiftool -Title="Onam Catalogue" -Author="aabhara" -overwrite_original catalogue.pdf
+
+# 4. Ship it
 git add catalogue.pdf cover.jpg
 git commit -m "Update catalogue"
 git push
