@@ -1,0 +1,189 @@
+/* ---------- tokens ---------- */
+:root {
+  --ivory: #f6f1e6;        /* kasavu cloth */
+  --pearl: #fffdf8;        /* card surface */
+  --ink: #22382c;          /* deep leaf green */
+  --ink-soft: #4a5e51;
+  --gold: #a17c2e;         /* woven border */
+  --gold-bright: #c9a24b;  /* gold thread highlight */
+  --kemp: #8e2f2b;         /* stone red, used once */
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body: "Karla", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--body);
+  line-height: 1.55;
+  border-top: 3px solid var(--gold);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  flex: 1;
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 7vw, 5rem);
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+  animation: rise 0.7s ease-out both;
+}
+
+@media (min-width: 860px) {
+  .hero { grid-template-columns: 1.15fr 0.85fr; }
+}
+
+.wordmark {
+  margin: 0 0 1.1rem;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.55em;
+  text-transform: lowercase;
+  color: var(--gold);
+}
+
+.divider { margin: 0 0 2.2rem; line-height: 0; }
+.gem {
+  display: inline-block;
+  width: 7px; height: 7px;
+  background: var(--kemp);
+  transform: rotate(45deg);
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 7vw, 4.3rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+h1 em { font-style: italic; font-weight: 500; }
+
+.lede {
+  margin: 0 0 2.2rem;
+  max-width: 34ch;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- actions ---------- */
+.actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+.button {
+  display: inline-block;
+  padding: 0.95rem 2.1rem;
+  background: var(--ink);
+  color: var(--ivory);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--ink);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.button:hover { background: var(--gold); border-color: var(--gold); color: var(--pearl); }
+
+.quiet-link {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gold);
+}
+.quiet-link:hover { color: var(--ink); }
+
+a:focus-visible, .cover:focus-visible {
+  outline: 2px solid var(--kemp);
+  outline-offset: 3px;
+}
+
+/* ---------- cover card ---------- */
+.cover {
+  justify-self: center;
+  display: block;
+  max-width: 340px;
+  width: 100%;
+  background: var(--pearl);
+  padding: 10px 10px 0;
+  border: 1px solid rgba(161, 124, 46, 0.45);
+  box-shadow: 0 18px 40px -18px rgba(34, 56, 44, 0.35);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 26px 50px -20px rgba(34, 56, 44, 0.45);
+}
+.cover img { display: block; width: 100%; height: auto; }
+.cover-caption {
+  display: block;
+  padding: 0.7rem 0 0.8rem;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---------- kasavu band ---------- */
+.kasavu {
+  height: 26px;
+  background:
+    linear-gradient(180deg,
+      var(--ink) 0 3px,
+      var(--ivory) 3px 6px,
+      var(--gold-bright) 6px 9px,
+      var(--gold) 9px 26px);
+}
+
+/* ---------- footer ---------- */
+footer {
+  background: var(--ink);
+  color: var(--ivory);
+  text-align: center;
+  padding: 2.4rem 1.25rem 2.6rem;
+}
+.foot-brand {
+  margin: 0 0 0.9rem;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  letter-spacing: 0.55em;
+  color: var(--gold-bright);
+}
+.foot-links { margin: 0 0 0.7rem; font-size: 0.9rem; }
+.foot-links a { color: var(--ivory); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold-bright); }
+.foot-links span { margin: 0 0.5rem; color: var(--gold-bright); }
+.foot-note { margin: 0; font-size: 0.78rem; color: rgba(246, 241, 230, 0.65); }
+
+/* ---------- motion ---------- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero { animation: none; }
+  .cover, .button { transition: none; }
+  html { scroll-behavior: auto; }
+}
