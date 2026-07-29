@@ -43,22 +43,11 @@ body {
   .hero { grid-template-columns: 1.15fr 0.85fr; }
 }
 
-.wordmark {
-  margin: 0 0 1.1rem;
-  font-family: var(--display);
-  font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: 0.55em;
-  text-transform: lowercase;
-  color: var(--gold);
-}
-
-.divider { margin: 0 0 2.2rem; line-height: 0; }
-.gem {
-  display: inline-block;
-  width: 7px; height: 7px;
-  background: var(--kemp);
-  transform: rotate(45deg);
+.logo {
+  display: block;
+  width: clamp(150px, 20vw, 190px);
+  height: auto;
+  margin: 0 0 2.4rem;
 }
 
 .eyebrow {

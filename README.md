@@ -9,6 +9,7 @@ Static site — plain HTML/CSS, no framework, no build step. The catalogue PDF i
 ```
 index.html      landing page
 styles.css      design tokens + layout (kasavu ivory/gold palette)
+logo.png        brand logo (transparent), shown top-left
 catalogue.pdf   the current catalogue (web-compressed)
 cover.jpg       page 1 of the catalogue, used on the page and in link previews
 ```
@@ -49,5 +50,4 @@ Keep the filename exactly `catalogue.pdf` — the buttons, the download link, an
 
 ## To-do after first deploy
 
-- Replace the `#` placeholders in the footer (`index.html`) with the real Instagram and WhatsApp links.
 - If the PDF size changes, update the "17 MB" label next to the download link.
