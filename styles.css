@@ -47,9 +47,9 @@ body {
 
 .logo {
   display: block;
-  width: clamp(150px, 20vw, 190px);
+  width: clamp(148px, 19.73vw, 187.5px);
   height: auto;
-  margin: 0 auto 0.75rem;
+  margin: 0 auto 1.5rem;
 }
 
 h1 {
